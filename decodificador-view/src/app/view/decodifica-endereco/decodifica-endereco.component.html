@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-content class="center-content">
+      <mat-form-field class="mg-15">
+        <input matInput type="number" [(ngModel)]="numero" placeholder="Digite o número">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="adicionarNumero()">Adicionar</button>
+      <br><br>
+      <span>Lista de Código</span>
+      <mat-list *ngIf="listaNumeros.length > 0">
+        <mat-list-item *ngFor="let numero of listaNumeros">
+          {{ numero }}
+          <button mat-icon-button color="warn" (click)="removerNumero(numero)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+      <br><br>
+      <span class="red" *ngIf="semNumero">Lista sem números preenchidos!</span>
+    </mat-card-content>
+    <mat-card-actions class="center-actions">
+      <button mat-raised-button color="accent" (click)="confirmar()">Confirmar</button>
+    </mat-card-actions>
+    <br><br>
+  <label *ngIf="resultado">Os comandos digitados Resulta no endereço {{resultado.endereco}}</label>
+  </mat-card>
+</div>

@@ -1,0 +1,15 @@
+<mat-card class="card">
+    <mat-card-content class="center-content">
+      <h2>Número de senhas possíveis entre 184759 e 856920:</h2>
+      <p>{{ numeroSenhasPossiveis }}</p>
+  
+      <mat-form-field>
+        <input matInput [(ngModel)]="tentativaSenha" placeholder="Digite a senha">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="verificarSenha()">Verificar</button>
+  
+      <p *ngIf="resultadoVerificacao !== null">{{ resultadoVerificacao }}</p>
+    </mat-card-content>
+  </mat-card>
+  
